@@ -125,21 +125,23 @@ function CaseStudy() {
         </div>
       </div>
 
-      <div className="border-t-2 border-foreground bg-foreground text-background">
-        <Link
-          to="/work/$slug"
-          params={{ slug: next.slug }}
-          className="group mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-6 px-5 py-16 md:px-10"
-        >
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-secondary">
-              Next project
-            </p>
-            <p className="mt-3 font-display text-5xl md:text-7xl">{next.title}</p>
-          </div>
-          <ArrowRight className="size-14 transition-transform duration-300 group-hover:translate-x-3" />
-        </Link>
-      </div>
+      {next && (
+        <div className="border-t-2 border-foreground bg-foreground text-background">
+          <Link
+            to="/work/$slug"
+            params={{ slug: next.slug }}
+            className="group mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-6 px-5 py-16 md:px-10"
+          >
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-secondary">
+                Next project
+              </p>
+              <p className="mt-3 font-display text-5xl md:text-7xl">{next.title}</p>
+            </div>
+            <ArrowRight className="size-14 transition-transform duration-300 group-hover:translate-x-3" />
+          </Link>
+        </div>
+      )}
 
       <div className="mx-auto max-w-[1600px] px-5 py-16 text-center md:px-10">
         <p className="font-display text-4xl">Got a project like this one?</p>
