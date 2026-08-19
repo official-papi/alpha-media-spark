@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Brand identity, packaging, posters and motion design with a brutalist-pop edge.",
+          "Independent graphic design studio building loud brand identities, packaging, posters and motion for ambitious clients.",
       },
     ],
   }),

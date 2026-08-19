@@ -83,11 +83,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Alph@ Media is an independent graphic design studio for brand identity, print, packaging and motion.",
+          "Independent graphic design studio building loud brand identities, packaging, posters and motion for ambitious clients.",
       },
       { name: "author", content: "Alph@ Media" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Alph@ Media — Graphic Design Studio" },
+      { name: "twitter:title", content: "Alph@ Media — Graphic Design Studio" },
+      { property: "og:description", content: "Independent graphic design studio building loud brand identities, packaging, posters and motion for ambitious clients." },
+      { name: "twitter:description", content: "Independent graphic design studio building loud brand identities, packaging, posters and motion for ambitious clients." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a1f4a9f040f803717f4b45ef87a4d286/id-preview-f1b66198--5e14cf0d-4e0b-4393-8022-7c72332b5ccb.lovable.app-1787140650078.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a1f4a9f040f803717f4b45ef87a4d286/id-preview-f1b66198--5e14cf0d-4e0b-4393-8022-7c72332b5ccb.lovable.app-1787140650078.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
