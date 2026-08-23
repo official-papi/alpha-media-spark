@@ -29,11 +29,12 @@ export const Route = createFileRoute("/")({
 });
 
 const stats = [
-  { value: "9 yrs", label: "In practice" },
-  { value: "120+", label: "Projects shipped" },
-  { value: "4", label: "Design awards" },
-  { value: "18", label: "Countries served" },
+  { value: "4+ yrs", label: "Professional experience" },
+  { value: "UI", label: "Design & web development" },
+  { value: "Print", label: "Graphics & brand kits" },
+  { value: "Events", label: "Media coverage" },
 ];
+
 
 function Hero() {
   const ref = useRef<HTMLDivElement>(null);
