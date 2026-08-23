@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import work2 from "@/assets/work-2.jpg";
+import portrait from "@/assets/alexx-portrait.png.asset.json";
 import { Reveal } from "@/components/site/reveal";
 import { Magnetic } from "@/components/site/magnetic";
 import { Marquee } from "@/components/site/marquee";
@@ -7,53 +7,57 @@ import { Marquee } from "@/components/site/marquee";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About the Studio — Alph@ Media" },
+      { title: "About Alexx — Web Designer & Visual Creative" },
       {
         name: "description",
         content:
-          "Alph@ Media is an independent graphic design studio: nine years of identity, packaging and motion work for coffee roasters, labels, fintechs and festivals.",
+          "Alexx is a web designer and visual creative with 4+ years of experience in UI design, web development, graphic design and event media coverage.",
       },
-      { property: "og:title", content: "About the Studio — Alph@ Media" },
+      { property: "og:title", content: "About Alexx — Web Designer & Visual Creative" },
       {
         property: "og:description",
-        content: "Nine years of identity, packaging and motion design — the toolkit and the timeline.",
+        content:
+          "4+ years turning ideas into engaging visual experiences — UI design, web development, graphic design and event media coverage.",
       },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: AboutPage,
 });
 
 const toolkit = [
-  { group: "Adobe", items: ["Illustrator", "Photoshop", "InDesign", "After Effects"] },
-  { group: "Product", items: ["Figma", "Framer", "Webflow"] },
-  { group: "3D & motion", items: ["Blender", "Cinema 4D", "Rive"] },
-  { group: "Print", items: ["Prepress specs", "Dielines", "Pantone matching"] },
+  { group: "Design", items: ["Adobe Photoshop", "CorelDRAW", "Canva", "Figma"] },
+  { group: "Photo", items: ["Adobe Lightroom", "Colour grading", "Retouching"] },
+  { group: "Web", items: ["UI design", "Responsive layout", "Web development"] },
+  { group: "Media", items: ["Event coverage", "Social creatives", "Brand kits"] },
 ];
 
 const timeline = [
-  { year: "2017", title: "First freelance mark", body: "Designed a record-label logo between university deadlines. Never stopped." },
-  { year: "2019", title: "In-house at an agency", body: "Two years of packaging and retail work at scale, plus a taste for tight print specs." },
-  { year: "2021", title: "Alph@ Media opens", body: "Independent studio, working direct with founders instead of through three layers of account management." },
-  { year: "2023", title: "First award", body: "A coffee identity picked up a regional design award and a lot of very good coffee." },
-  { year: "2026", title: "Today", body: "Selective roster, 6–8 identity projects a year, plus campaign and motion work." },
+  { year: "2022", title: "First paid designs", body: "Started with flyers and social creatives for small businesses — and never put the tools down." },
+  { year: "2023", title: "Into UI design", body: "Moved from static graphics into interfaces: landing pages, dashboards, mobile screens." },
+  { year: "2024", title: "Web development", body: "Started shipping the designs myself, so the final site looks like the mockup." },
+  { year: "2025", title: "Event media coverage", body: "Photo and visual coverage for events, with same-week edits and social cutdowns." },
+  { year: "2026", title: "Today", body: "Working with brands, businesses and individuals across design, web and media." },
 ];
 
-const clients = [
-  "Cede Roasters",
-  "Nova Records",
-  "Palma Fintech",
-  "Harmattan Festival",
-  "Ode Studio",
-  "Third Coast Press",
-  "Lumen Optics",
-  "Ravel Textiles",
+const services = [
+  "Web design",
+  "UI design",
+  "Web development",
+  "Graphic design",
+  "Brand identity",
+  "Social media creatives",
+  "Photo editing",
+  "Event media coverage",
 ];
 
 const principles = [
-  { title: "Loud, not messy", body: "Contrast and scale do the shouting. The grid keeps it legible." },
-  { title: "Systems over one-offs", body: "If it only works on the pitch deck, it isn't a brand." },
-  { title: "Print discipline", body: "Files that survive a real press, a real embroiderer, a real screen." },
+  { title: "Detail first", body: "Spacing, type and contrast decided on purpose — not by accident." },
+  { title: "Visual storytelling", body: "Every layout should say something before anyone reads a word." },
+  { title: "Design that ships", body: "Files and builds that work in the real world, online and in print." },
 ];
+
 
 function AboutPage() {
   return (
