@@ -154,17 +154,17 @@ function Home() {
         <div className="grid gap-10 md:grid-cols-[1fr_1fr]">
           <Reveal>
             <h2 className="font-display text-5xl leading-[0.95] md:text-7xl">
-              A studio of one, <span className="italic text-primary">wired</span> like a team.
+              One creative, <span className="italic text-primary">many</span> surfaces.
             </h2>
           </Reveal>
           <Reveal delay={0.1} className="space-y-5 text-lg leading-relaxed">
             <p>
-              Every project runs through the same four steps: interrogate the brief, build the
-              system, stress-test it across every surface, then hand over files a printer and a
-              developer will both thank you for.
+              Canva, Photoshop, Lightroom and CorelDRAW for the visuals; Figma and code for the
+              interfaces. Same eye for detail whether it lands on a screen, a banner or a feed.
             </p>
             <p className="text-muted-foreground">
-              Clients range from coffee roasters and record labels to fintechs and festivals.
+              I work with brands, businesses and individuals — from full websites and UI systems to
+              social creatives and event media coverage.
             </p>
             <Link
               to="/services"
@@ -175,6 +175,7 @@ function Home() {
           </Reveal>
         </div>
       </section>
+
 
       <section className="border-t-2 border-foreground bg-accent text-accent-foreground">
         <div className="mx-auto flex max-w-[1600px] flex-col items-start gap-8 px-5 py-20 md:flex-row md:items-center md:justify-between md:px-10">
