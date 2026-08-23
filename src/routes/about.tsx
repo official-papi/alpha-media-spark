@@ -160,16 +160,17 @@ function AboutPage() {
       <section className="border-y-2 border-foreground bg-foreground text-background">
         <div className="mx-auto max-w-[1600px] px-5 py-16 md:px-10">
           <h2 className="text-xs font-semibold uppercase tracking-[0.3em] opacity-70">
-            Selected clients
+            What I do
           </h2>
           <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4">
-            {clients.map((c) => (
+            {services.map((c) => (
               <p key={c} className="font-display text-3xl leading-none md:text-4xl">
                 {c}
               </p>
             ))}
           </div>
         </div>
+
       </section>
 
       <section className="bg-accent text-accent-foreground">
