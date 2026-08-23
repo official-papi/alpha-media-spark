@@ -79,11 +79,12 @@ function Hero() {
         <div className="mt-10 grid gap-8 border-t-2 border-foreground pt-8 md:grid-cols-[1.2fr_1fr]">
           <Reveal delay={0.1}>
             <p className="max-w-xl text-lg leading-relaxed md:text-xl">
-              We design identities that refuse to whisper. Wordmarks, packaging, posters and
-              motion built to be recognised from across the room — and to still work at
-              16&nbsp;pixels.
+              I'm Alexx — a web designer and visual creative with 4+ years turning ideas into
+              engaging digital and visual experiences: UI design, web development, graphics and
+              event media coverage.
             </p>
           </Reveal>
+
           <Reveal delay={0.2} className="flex flex-wrap items-start gap-3 md:justify-end">
             <Magnetic to="/work">See the work</Magnetic>
             <Magnetic to="/contact" variant="outline">
