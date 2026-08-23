@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import work2 from "@/assets/work-2.jpg";
+import portrait from "@/assets/alexx-portrait.png.asset.json";
 import { Reveal } from "@/components/site/reveal";
 import { Magnetic } from "@/components/site/magnetic";
 import { Marquee } from "@/components/site/marquee";
@@ -7,53 +7,57 @@ import { Marquee } from "@/components/site/marquee";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About the Studio — Alph@ Media" },
+      { title: "About Alexx — Web Designer & Visual Creative" },
       {
         name: "description",
         content:
-          "Alph@ Media is an independent graphic design studio: nine years of identity, packaging and motion work for coffee roasters, labels, fintechs and festivals.",
+          "Alexx is a web designer and visual creative with 4+ years of experience in UI design, web development, graphic design and event media coverage.",
       },
-      { property: "og:title", content: "About the Studio — Alph@ Media" },
+      { property: "og:title", content: "About Alexx — Web Designer & Visual Creative" },
       {
         property: "og:description",
-        content: "Nine years of identity, packaging and motion design — the toolkit and the timeline.",
+        content:
+          "4+ years turning ideas into engaging visual experiences — UI design, web development, graphic design and event media coverage.",
       },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: AboutPage,
 });
 
 const toolkit = [
-  { group: "Adobe", items: ["Illustrator", "Photoshop", "InDesign", "After Effects"] },
-  { group: "Product", items: ["Figma", "Framer", "Webflow"] },
-  { group: "3D & motion", items: ["Blender", "Cinema 4D", "Rive"] },
-  { group: "Print", items: ["Prepress specs", "Dielines", "Pantone matching"] },
+  { group: "Design", items: ["Adobe Photoshop", "CorelDRAW", "Canva", "Figma"] },
+  { group: "Photo", items: ["Adobe Lightroom", "Colour grading", "Retouching"] },
+  { group: "Web", items: ["UI design", "Responsive layout", "Web development"] },
+  { group: "Media", items: ["Event coverage", "Social creatives", "Brand kits"] },
 ];
 
 const timeline = [
-  { year: "2017", title: "First freelance mark", body: "Designed a record-label logo between university deadlines. Never stopped." },
-  { year: "2019", title: "In-house at an agency", body: "Two years of packaging and retail work at scale, plus a taste for tight print specs." },
-  { year: "2021", title: "Alph@ Media opens", body: "Independent studio, working direct with founders instead of through three layers of account management." },
-  { year: "2023", title: "First award", body: "A coffee identity picked up a regional design award and a lot of very good coffee." },
-  { year: "2026", title: "Today", body: "Selective roster, 6–8 identity projects a year, plus campaign and motion work." },
+  { year: "2022", title: "First paid designs", body: "Started with flyers and social creatives for small businesses — and never put the tools down." },
+  { year: "2023", title: "Into UI design", body: "Moved from static graphics into interfaces: landing pages, dashboards, mobile screens." },
+  { year: "2024", title: "Web development", body: "Started shipping the designs myself, so the final site looks like the mockup." },
+  { year: "2025", title: "Event media coverage", body: "Photo and visual coverage for events, with same-week edits and social cutdowns." },
+  { year: "2026", title: "Today", body: "Working with brands, businesses and individuals across design, web and media." },
 ];
 
-const clients = [
-  "Cede Roasters",
-  "Nova Records",
-  "Palma Fintech",
-  "Harmattan Festival",
-  "Ode Studio",
-  "Third Coast Press",
-  "Lumen Optics",
-  "Ravel Textiles",
+const services = [
+  "Web design",
+  "UI design",
+  "Web development",
+  "Graphic design",
+  "Brand identity",
+  "Social media creatives",
+  "Photo editing",
+  "Event media coverage",
 ];
 
 const principles = [
-  { title: "Loud, not messy", body: "Contrast and scale do the shouting. The grid keeps it legible." },
-  { title: "Systems over one-offs", body: "If it only works on the pitch deck, it isn't a brand." },
-  { title: "Print discipline", body: "Files that survive a real press, a real embroiderer, a real screen." },
+  { title: "Detail first", body: "Spacing, type and contrast decided on purpose — not by accident." },
+  { title: "Visual storytelling", body: "Every layout should say something before anyone reads a word." },
+  { title: "Design that ships", body: "Files and builds that work in the real world, online and in print." },
 ];
+
 
 function AboutPage() {
   return (
@@ -62,34 +66,41 @@ function AboutPage() {
         <div className="grid gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-end">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-              About the studio
+              About me
             </p>
             <h1 className="mt-4 font-display text-6xl leading-[0.88] md:text-[7rem]">
-              Design that <span className="italic text-primary">holds up</span>
+              I'm <span className="italic text-primary">Alexx</span>
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed">
-              I'm the designer behind Alph@ Media — nine years of building identities, packaging
-              and campaigns for people who would rather be memorable than safe. Small studio, direct
-              line, no handoffs to a junior after the pitch.
+              A passionate web designer and visual creative with over four years of professional
+              experience creating compelling digital and visual experiences. I work in Canva, Adobe
+              Photoshop, Lightroom and CorelDRAW, with a strong eye for creativity, detail and
+              visual storytelling.
+            </p>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
+              Beyond graphic design, I specialise in UI design, web development and event media
+              coverage — helping brands, businesses and individuals turn ideas into engaging visual
+              experiences, online and offline.
             </p>
             <div className="mt-8">
               <Magnetic to="/work">See the portfolio</Magnetic>
             </div>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="border-2 border-foreground">
+            <div className="border-2 border-foreground bg-foreground">
               <img
-                src={work2}
-                alt="Studio work: layered poster and packaging artwork in orange and black"
+                src={portrait.url}
+                alt="Alexx, web designer and visual creative, in a black and white studio portrait"
                 loading="lazy"
-                className="aspect-[4/5] w-full object-cover"
+                className="aspect-[4/5] w-full object-cover object-[65%_30%]"
               />
             </div>
           </Reveal>
         </div>
       </section>
 
-      <Marquee items={["Identity", "Packaging", "Motion", "Editorial", "Illustration"]} />
+      <Marquee items={services} />
+
 
       <section className="mx-auto max-w-[1600px] px-5 py-20 md:px-10">
         <Reveal>
@@ -149,16 +160,17 @@ function AboutPage() {
       <section className="border-y-2 border-foreground bg-foreground text-background">
         <div className="mx-auto max-w-[1600px] px-5 py-16 md:px-10">
           <h2 className="text-xs font-semibold uppercase tracking-[0.3em] opacity-70">
-            Selected clients
+            What I do
           </h2>
           <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4">
-            {clients.map((c) => (
+            {services.map((c) => (
               <p key={c} className="font-display text-3xl leading-none md:text-4xl">
                 {c}
               </p>
             ))}
           </div>
         </div>
+
       </section>
 
       <section className="bg-accent text-accent-foreground">

@@ -29,11 +29,12 @@ export const Route = createFileRoute("/")({
 });
 
 const stats = [
-  { value: "9 yrs", label: "In practice" },
-  { value: "120+", label: "Projects shipped" },
-  { value: "4", label: "Design awards" },
-  { value: "18", label: "Countries served" },
+  { value: "4+ yrs", label: "Professional experience" },
+  { value: "UI", label: "Design & web development" },
+  { value: "Print", label: "Graphics & brand kits" },
+  { value: "Events", label: "Media coverage" },
 ];
+
 
 function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -78,11 +79,12 @@ function Hero() {
         <div className="mt-10 grid gap-8 border-t-2 border-foreground pt-8 md:grid-cols-[1.2fr_1fr]">
           <Reveal delay={0.1}>
             <p className="max-w-xl text-lg leading-relaxed md:text-xl">
-              We design identities that refuse to whisper. Wordmarks, packaging, posters and
-              motion built to be recognised from across the room — and to still work at
-              16&nbsp;pixels.
+              I'm Alexx — a web designer and visual creative with 4+ years turning ideas into
+              engaging digital and visual experiences: UI design, web development, graphics and
+              event media coverage.
             </p>
           </Reveal>
+
           <Reveal delay={0.2} className="flex flex-wrap items-start gap-3 md:justify-end">
             <Magnetic to="/work">See the work</Magnetic>
             <Magnetic to="/contact" variant="outline">
@@ -152,17 +154,17 @@ function Home() {
         <div className="grid gap-10 md:grid-cols-[1fr_1fr]">
           <Reveal>
             <h2 className="font-display text-5xl leading-[0.95] md:text-7xl">
-              A studio of one, <span className="italic text-primary">wired</span> like a team.
+              One creative, <span className="italic text-primary">many</span> surfaces.
             </h2>
           </Reveal>
           <Reveal delay={0.1} className="space-y-5 text-lg leading-relaxed">
             <p>
-              Every project runs through the same four steps: interrogate the brief, build the
-              system, stress-test it across every surface, then hand over files a printer and a
-              developer will both thank you for.
+              Canva, Photoshop, Lightroom and CorelDRAW for the visuals; Figma and code for the
+              interfaces. Same eye for detail whether it lands on a screen, a banner or a feed.
             </p>
             <p className="text-muted-foreground">
-              Clients range from coffee roasters and record labels to fintechs and festivals.
+              I work with brands, businesses and individuals — from full websites and UI systems to
+              social creatives and event media coverage.
             </p>
             <Link
               to="/services"
@@ -173,6 +175,7 @@ function Home() {
           </Reveal>
         </div>
       </section>
+
 
       <section className="border-t-2 border-foreground bg-accent text-accent-foreground">
         <div className="mx-auto flex max-w-[1600px] flex-col items-start gap-8 px-5 py-20 md:flex-row md:items-center md:justify-between md:px-10">
