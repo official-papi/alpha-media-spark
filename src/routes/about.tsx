@@ -66,34 +66,41 @@ function AboutPage() {
         <div className="grid gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-end">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-              About the studio
+              About me
             </p>
             <h1 className="mt-4 font-display text-6xl leading-[0.88] md:text-[7rem]">
-              Design that <span className="italic text-primary">holds up</span>
+              I'm <span className="italic text-primary">Alexx</span>
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed">
-              I'm the designer behind Alph@ Media — nine years of building identities, packaging
-              and campaigns for people who would rather be memorable than safe. Small studio, direct
-              line, no handoffs to a junior after the pitch.
+              A passionate web designer and visual creative with over four years of professional
+              experience creating compelling digital and visual experiences. I work in Canva, Adobe
+              Photoshop, Lightroom and CorelDRAW, with a strong eye for creativity, detail and
+              visual storytelling.
+            </p>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
+              Beyond graphic design, I specialise in UI design, web development and event media
+              coverage — helping brands, businesses and individuals turn ideas into engaging visual
+              experiences, online and offline.
             </p>
             <div className="mt-8">
               <Magnetic to="/work">See the portfolio</Magnetic>
             </div>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="border-2 border-foreground">
+            <div className="border-2 border-foreground bg-foreground">
               <img
-                src={work2}
-                alt="Studio work: layered poster and packaging artwork in orange and black"
+                src={portrait.url}
+                alt="Alexx, web designer and visual creative, in a black and white studio portrait"
                 loading="lazy"
-                className="aspect-[4/5] w-full object-cover"
+                className="aspect-[4/5] w-full object-cover object-[65%_30%]"
               />
             </div>
           </Reveal>
         </div>
       </section>
 
-      <Marquee items={["Identity", "Packaging", "Motion", "Editorial", "Illustration"]} />
+      <Marquee items={services} />
+
 
       <section className="mx-auto max-w-[1600px] px-5 py-20 md:px-10">
         <Reveal>
