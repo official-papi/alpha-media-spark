@@ -16,6 +16,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
 import { Route as WorkSlugRouteImport } from './routes/work.$slug'
+import { Route as ApiPublicImageSplatRouteImport } from './routes/api/public/image.$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +53,11 @@ const WorkSlugRoute = WorkSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => WorkRoute,
 } as any)
+const ApiPublicImageSplatRoute = ApiPublicImageSplatRouteImport.update({
+  id: '/api/public/image/$',
+  path: '/api/public/image/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/work': typeof WorkRouteWithChildren
   '/work/$slug': typeof WorkSlugRoute
   '/work/': typeof WorkIndexRoute
+  '/api/public/image/$': typeof ApiPublicImageSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/work/$slug': typeof WorkSlugRoute
   '/work': typeof WorkIndexRoute
+  '/api/public/image/$': typeof ApiPublicImageSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/work': typeof WorkRouteWithChildren
   '/work/$slug': typeof WorkSlugRoute
   '/work/': typeof WorkIndexRoute
+  '/api/public/image/$': typeof ApiPublicImageSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -90,8 +99,16 @@ export interface FileRouteTypes {
     | '/work'
     | '/work/$slug'
     | '/work/'
+    | '/api/public/image/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/services' | '/work/$slug' | '/work'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/services'
+    | '/work/$slug'
+    | '/work'
+    | '/api/public/image/$'
   id:
     | '__root__'
     | '/'
@@ -101,6 +118,7 @@ export interface FileRouteTypes {
     | '/work'
     | '/work/$slug'
     | '/work/'
+    | '/api/public/image/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -109,6 +127,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRoute
   WorkRoute: typeof WorkRouteWithChildren
+  ApiPublicImageSplatRoute: typeof ApiPublicImageSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -162,6 +181,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkSlugRouteImport
       parentRoute: typeof WorkRoute
     }
+    '/api/public/image/$': {
+      id: '/api/public/image/$'
+      path: '/api/public/image/$'
+      fullPath: '/api/public/image/$'
+      preLoaderRoute: typeof ApiPublicImageSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +209,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRoute,
   WorkRoute: WorkRouteWithChildren,
+  ApiPublicImageSplatRoute: ApiPublicImageSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
