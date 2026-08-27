@@ -1,15 +1,27 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { getNextProject, getProject, projects } from "@/data/projects";
+import { listPublishedProjects } from "@/lib/projects.functions";
 import { Reveal } from "@/components/site/reveal";
 import { Magnetic } from "@/components/site/magnetic";
 
 export const Route = createFileRoute("/work/$slug")({
-  loader: ({ params }) => {
-    const project = getProject(params.slug);
-    if (!project) throw notFound();
-    return { project, next: getNextProject(params.slug) };
+  loader: async ({ params }) => {
+    const all = await listPublishedProjects();
+    const i = all.findIndex((p) => p.slug === params.slug);
+    if (i === -1) throw notFound();
+    return { project: all[i]!, next: all[(i + 1) % all.length], total: all.length };
   },
+  errorComponent: () => (
+    <div className="mx-auto max-w-[1600px] px-5 py-20 md:px-10">
+      <h1 className="font-display text-5xl">Couldn't load this case study.</h1>
+      <p className="mt-4 text-muted-foreground">Please refresh the page.</p>
+    </div>
+  ),
+  notFoundComponent: () => (
+    <div className="mx-auto max-w-[1600px] px-5 py-20 md:px-10">
+      <h1 className="font-display text-5xl">Project not found</h1>
+    </div>
+  ),
   head: ({ loaderData }) => {
     if (!loaderData) {
       return { meta: [{ title: "Project not found — Alph@ Media" }, { name: "robots", content: "noindex" }] };
