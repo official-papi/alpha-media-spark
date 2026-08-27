@@ -115,6 +115,7 @@ function Hero() {
 }
 
 function Home() {
+  const projects = Route.useLoaderData();
   const featured = projects.slice(0, 6);
 
   return (
