@@ -41,7 +41,7 @@ export const Route = createFileRoute("/work/$slug")({
 });
 
 function CaseStudy() {
-  const { project, next } = Route.useLoaderData();
+  const { project, next, total } = Route.useLoaderData();
 
   return (
     <article>
@@ -161,7 +161,7 @@ function CaseStudy() {
           <Magnetic to="/contact">Start a project</Magnetic>
         </div>
         <p className="mt-10 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          {projects.length} case studies in the archive
+          {total} case studies in the archive
         </p>
       </div>
     </article>
