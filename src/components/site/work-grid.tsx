@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
-import type { Project } from "@/data/projects";
+import type { ProjectRecord } from "@/lib/project-types";
 
-export function WorkGrid({ items }: { items: Project[] }) {
+export function WorkGrid({ items }: { items: ProjectRecord[] }) {
   return (
     <div className="columns-1 gap-6 sm:columns-2 lg:columns-3 [&>*]:mb-6">
       {items.map((p, i) => (
@@ -13,7 +13,7 @@ export function WorkGrid({ items }: { items: Project[] }) {
   );
 }
 
-function ProjectTile({ project, index }: { project: Project; index: number }) {
+function ProjectTile({ project, index }: { project: ProjectRecord; index: number }) {
   return (
     <motion.div
       layout
