@@ -1,12 +1,24 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { categories, projects } from "@/data/projects";
+import { listPublishedProjects } from "@/lib/projects.functions";
 import { WorkGrid } from "@/components/site/work-grid";
 import { Reveal } from "@/components/site/reveal";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/work/")({
+  loader: () => listPublishedProjects(),
+  errorComponent: () => (
+    <div className="mx-auto max-w-[1600px] px-5 py-20 md:px-10">
+      <h1 className="font-display text-5xl">Couldn't load the portfolio.</h1>
+      <p className="mt-4 text-muted-foreground">Please refresh the page.</p>
+    </div>
+  ),
+  notFoundComponent: () => (
+    <div className="mx-auto max-w-[1600px] px-5 py-20 md:px-10">
+      <h1 className="font-display text-5xl">Page not found</h1>
+    </div>
+  ),
   head: () => ({
     meta: [
       { title: "Work — Alph@ Media Portfolio" },
@@ -26,11 +38,17 @@ export const Route = createFileRoute("/work/")({
 });
 
 function WorkPage() {
+  const projects = Route.useLoaderData();
   const [filter, setFilter] = useState<string>("All");
+
+  const categories = useMemo(
+    () => Array.from(new Set(projects.map((p) => p.category))),
+    [projects],
+  );
 
   const filtered = useMemo(
     () => (filter === "All" ? projects : projects.filter((p) => p.category === filter)),
-    [filter],
+    [filter, projects],
   );
 
   return (

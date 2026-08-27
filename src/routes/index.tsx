@@ -2,13 +2,25 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { projects } from "@/data/projects";
+import { listPublishedProjects } from "@/lib/projects.functions";
 import { WorkGrid } from "@/components/site/work-grid";
 import { Marquee } from "@/components/site/marquee";
 import { Reveal } from "@/components/site/reveal";
 import { Magnetic } from "@/components/site/magnetic";
 
 export const Route = createFileRoute("/")({
+  loader: () => listPublishedProjects(),
+  errorComponent: () => (
+    <div className="mx-auto max-w-[1600px] px-5 py-20 md:px-10">
+      <h1 className="font-display text-5xl">Something broke loading the work.</h1>
+      <p className="mt-4 text-muted-foreground">Please refresh the page.</p>
+    </div>
+  ),
+  notFoundComponent: () => (
+    <div className="mx-auto max-w-[1600px] px-5 py-20 md:px-10">
+      <h1 className="font-display text-5xl">Page not found</h1>
+    </div>
+  ),
   head: () => ({
     meta: [
       { title: "Alph@ Media — Graphic Design Studio" },
@@ -103,6 +115,7 @@ function Hero() {
 }
 
 function Home() {
+  const projects = Route.useLoaderData();
   const featured = projects.slice(0, 6);
 
   return (
